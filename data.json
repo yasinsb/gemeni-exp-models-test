@@ -1,134 +1,192 @@
 [
     {
-        "color": "red",
-        "coords": [
-            [
-                88,
-                117,
-                307,
-                184
-            ]
-        ],
-        "title": "Anaheim"
+      "color": "red",
+      "coords": [
+        107,
+        98,
+        347,
+        219
+      ],
+      "title": "Bell pepper"
     },
     {
-        "color": "yellow",
-        "coords": [
-            [
-                101,
-                222,
-                262,
-                286
-            ]
-        ],
-        "title": "Habanero"
+      "color": "yellow",
+      "coords": [
+        134,
+        236,
+        409,
+        356
+      ],
+      "title": "Bell pepper"
     },
     {
-        "color": "green",
-        "coords": [
-            [
-                36,
-                343,
-                411,
-                420
-            ]
-        ],
-        "title": "Poblano"
+      "color": "green",
+      "coords": [
+        90,
+        362,
+        368,
+        480
+      ],
+      "title": "Bell pepper"
     },
     {
-        "color": "red",
-        "coords": [
-            [
-                82,
-                498,
-                357,
-                564
-            ]
-        ],
-        "title": "Jalapeño"
+      "color": "yellow",
+      "coords": [
+        82,
+        480,
+        330,
+        600
+      ],
+      "title": "Bell pepper"
     },
     {
-        "color": "green",
-        "coords": [
-            [
-                90,
-                626,
-                357,
-                692
-            ]
-        ],
-        "title": "Serrano"
+      "color": "green",
+      "coords": [
+        102,
+        616,
+        321,
+        721
+      ],
+      "title": "Bell pepper"
     },
     {
-        "color": "green",
-        "coords": [
-            [
-                0,
-                746,
-                502,
-                911
-            ]
-        ],
-        "title": "Pasilla"
+      "color": "red",
+      "coords": [
+        97,
+        738,
+        318,
+        858
+      ],
+      "title": "Bell pepper"
     },
     {
-        "color": "green",
-        "coords": [
-            [
-                372,
-                75,
-                931,
-                186
-            ]
-        ],
-        "title": "Ancho"
+      "color": "green",
+      "coords": [
+        384,
+        76,
+        557,
+        203
+      ],
+      "title": "Bell pepper"
     },
     {
-        "color": "red",
-        "coords": [
-            [
-                560,
-                222,
-                692,
-                292
-            ]
-        ],
-        "title": "Bird's eye"
+      "color": "red",
+      "coords": [
+        420,
+        128,
+        647,
+        316
+      ],
+      "title": "Chili pepper"
     },
     {
-        "color": "yellow",
-        "coords": [
-            [
-                500,
-                377,
-                802,
-                446
-            ]
-        ],
-        "title": "Thai Chili"
+      "color": "orange",
+      "coords": [
+        312,
+        333,
+        534,
+        439
+      ],
+      "title": "Scotch Bonnet pepper"
     },
     {
-        "color": "yellow",
-        "coords": [
-            [
-                486,
-                521,
-                836,
-                588
-            ]
-        ],
-        "title": "Yellow Chili"
+      "color": "green",
+      "coords": [
+        420,
+        429,
+        618,
+        539
+      ],
+      "title": "Bell pepper"
     },
     {
-        "color": "orange",
-        "coords": [
-            [
-                600,
-                718,
-                884,
-                966
-            ]
-        ],
-        "title": "Orange Bell Pepper"
+      "color": "red",
+      "coords": [
+        540,
+        433,
+        854,
+        600
+      ],
+      "title": "Chili pepper"
+    },
+    {
+      "color": "green",
+      "coords": [
+        381,
+        536,
+        572,
+        721
+      ],
+      "title": "Chili pepper"
+    },
+    {
+      "color": "orange",
+      "coords": [
+        670,
+        221,
+        841,
+        318
+      ],
+      "title": "Scotch Bonnet pepper"
+    },
+    {
+      "color": "red",
+      "coords": [
+        318,
+        674,
+        509,
+        766
+      ],
+      "title": "Scotch Bonnet pepper"
+    },
+    {
+      "color": "green",
+      "coords": [
+        589,
+        81,
+        839,
+        208
+      ],
+      "title": "Bell pepper"
+    },
+    {
+      "color": "yellow",
+      "coords": [
+        641,
+        608,
+        865,
+        736
+      ],
+      "title": "Bell pepper"
+    },
+    {
+      "color": "red",
+      "coords": [
+        625,
+        746,
+        846,
+        878
+      ],
+      "title": "Bell pepper"
+    },
+    {
+      "color": "green",
+      "coords": [
+        589,
+        321,
+        822,
+        446
+      ],
+      "title": "Bell pepper"
+    },
+    {
+      "color": "orange",
+      "coords": [
+        381,
+        768,
+        572,
+        886
+      ],
+      "title": "Bell pepper"
     }
-]
+  ]

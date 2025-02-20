@@ -1,18 +1,10 @@
 import json
+import os
 import cv2
 
-PROMPT = """
-Given the image you will receive, return bounding boxes as a JSON array, grouping peppers by their name and level of hotness
-levels of hotness annotated with color:
-  - green: not too hot
-  - yellow: somewhat hot
-  - yellow: pretty hot
-  - red: very hort
-"""
-
 # Constants for display settings
-MAX_WINDOW_WIDTH = 1512
-MAX_WINDOW_HEIGHT = 982
+# MAX_WINDOW_WIDTH = 1500
+# MAX_WINDOW_HEIGHT = 900
 FONT_SCALE_FACTOR = 900  # Increased to prevent excessive scaling
 FONT_THICKNESS = 2  # Slightly thicker for clarity
 BOX_THICKNESS = 2
@@ -20,12 +12,22 @@ TEXT_PADDING_X = 5  # Reduced to prevent background overflow
 TEXT_PADDING_Y = 4  # Adjusted for better alignment
 
 COLOR_MAPPING = {
-    "green": (76, 177, 34),    # BGR for bright green
-    "yellow": (0, 215, 255),   # BGR for strong golden yellow
-    "orange": (0, 140, 255),   # BGR for deep orange
-    "red": (60, 20, 220)       # BGR for vivid crimson red
+    "green": (76, 177, 34),           # BGR for bright green
+    "light green": (144, 238, 144),   # BGR for light green
+    "dark green": (0, 100, 0),        # BGR for dark green
+    "yellow": (0, 215, 255),          # BGR for strong golden yellow
+    "light yellow": (173, 255, 47),   # BGR for light yellow-greenish shade
+    "orange": (0, 140, 255),          # BGR for deep orange
+    "light orange": (0, 191, 255),    # BGR for lighter orange-yellow
+    "red": (60, 20, 220),             # BGR for vivid crimson red
+    "dark red": (0, 0, 139),          # BGR for dark red or maroon
+    "purple": (128, 0, 128),          # BGR for purple (e.g., some bell peppers)
+    "brown": (42, 42, 165),           # BGR for brownish-red (e.g., ripened cayenne)
+    "white": (255, 255, 255),         # BGR for white (rare but possible in ornamental peppers)
+    "black": (0, 0, 0),               # BGR for black (some peppers have very dark shades)
+    "pink": (203, 192, 255),          # BGR for pinkish-red (e.g., immature habanero)
+    "blue": (255, 0, 0),              # BGR for rare ornamental blueish peppers
 }
-
 def get_label_color(color):
     """Returns a fixed color for a given label color."""
     return COLOR_MAPPING.get(color.lower(), (0, 0, 0))  # Default to black
@@ -45,14 +47,9 @@ def validate_json(json_data):
             return False
 
         # Check each bounding box in coords
-        for box in item["coords"]:
-            if not (isinstance(box, (list, tuple)) and len(box) == 4):
-                print(f"Error: Each box must be [y1, x1, y2, x2], found {box}")
-                return False
-            if not all(isinstance(val, (int, float)) for val in box):
-                print(f"Error: Box values must be numbers, found {box}")
-                return False
-
+        # if not isinstance(item["coords"] 
+            
+            
     return True
 
 def draw_boxes(image, json_data, show_annotations=True):
@@ -60,7 +57,8 @@ def draw_boxes(image, json_data, show_annotations=True):
     img_h, img_w = image.shape[:2]
 
     # Resize image to fit within window if needed
-    scale_factor = min(MAX_WINDOW_WIDTH / img_w, MAX_WINDOW_HEIGHT / img_h)
+    # scale_factor = min(MAX_WINDOW_WIDTH / img_w, MAX_WINDOW_HEIGHT / img_h)
+    scale_factor = 1
     if scale_factor < 1:
         new_w = int(img_w * scale_factor)
         new_h = int(img_h * scale_factor)
@@ -75,7 +73,7 @@ def draw_boxes(image, json_data, show_annotations=True):
         color = get_label_color(color)
 
         # Draw each bounding box
-        for (y1, x1, y2, x2) in item["coords"]:
+        for (y1, x1, y2, x2) in [item["coords"]]:
             # Convert normalized (0-1000) to absolute pixels
             Y1, Y2 = int(y1 / 1000 * img_h), int(y2 / 1000 * img_h)
             X1, X2 = int(x1 / 1000 * img_w), int(x2 / 1000 * img_w)
@@ -120,8 +118,8 @@ def draw_boxes(image, json_data, show_annotations=True):
     return annotated_img
 
 def main():
-    image_path = "peppers3.png"  # Your image
-    json_file = "data.json"      # Your JSON
+    image_path = os.getenv("IMAGE_PATH", "image.png")
+    json_file = "output.json"      # Your JSON
 
     # Load data
     with open(json_file, "r") as f:
@@ -134,9 +132,14 @@ def main():
     if original_img is None:
         print(f"Error: Could not read image from {image_path}")
         return
-
+    # show the original image for 2 seconds
+    cv2.imshow("Peppers", original_img)
+    cv2.waitKey(1000)
+    # Draw bounding boxes
+    annotated_img = draw_boxes(original_img, data, show_annotations=True)
+    # save image to file
+    cv2.imwrite(image_path.replace(".", "_annotated."), annotated_img)
     while True:
-        annotated_img = draw_boxes(original_img, data, show_annotations=True)
         cv2.imshow("Peppers", annotated_img)
 
         # Wait for key press

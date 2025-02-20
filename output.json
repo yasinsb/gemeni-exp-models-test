@@ -1,0 +1,122 @@
+[
+  {
+    "color": "red",
+    "coords": [
+      107,
+      81,
+      407,
+      232
+    ],
+    "title": "bell pepper"
+  },
+  {
+    "color": "red",
+    "coords": [
+      52,
+      364,
+      247,
+      479
+    ],
+    "title": "scotch bonnet pepper"
+  },
+  {
+    "color": "green",
+    "coords": [
+      180,
+      560,
+      407,
+      741
+    ],
+    "title": "jalapeno pepper"
+  },
+  {
+    "color": "yellow",
+    "coords": [
+      300,
+      304,
+      571,
+      439
+    ],
+    "title": "bell pepper"
+  },
+  {
+    "color": "orange",
+    "coords": [
+      400,
+      490,
+      592,
+      595
+    ],
+    "title": "scotch bonnet pepper"
+  },
+  {
+    "color": "orange",
+    "coords": [
+      432,
+      674,
+      680,
+      820
+    ],
+    "title": "bell pepper"
+  },
+  {
+    "color": "yellow",
+    "coords": [
+      490,
+      26,
+      725,
+      168
+    ],
+    "title": "bell pepper"
+  },
+  {
+    "color": "yellow",
+    "coords": [
+      308,
+      851,
+      544,
+      956
+    ],
+    "title": "scotch bonnet pepper"
+  },
+  {
+    "color": "red",
+    "coords": [
+      602,
+      146,
+      941,
+      341
+    ],
+    "title": "chili pepper"
+  },
+  {
+    "color": "green",
+    "coords": [
+      750,
+      248,
+      970,
+      396
+    ],
+    "title": "jalapeno pepper"
+  },
+  {
+    "color": "green",
+    "coords": [
+      680,
+      446,
+      970,
+      600
+    ],
+    "title": "bell pepper"
+  },
+  {
+    "color": "red",
+    "coords": [
+      600,
+      680,
+      894,
+      956
+    ],
+    "title": "chili pepper"
+  }
+]
